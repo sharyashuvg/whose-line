@@ -39,6 +39,18 @@ def main() -> None:
     result = avg_diff(a, b)
     assert result == 0.0
 
+    string2: List[str] = [
+        "    line one",
+        "  line two",
+        "\tline three",
+    ]
+    stripped_lines = remove_leading_whitespaces(string2)
+    assert stripped_lines == ["line one", "line two", "line three"]
+
+    string3: str = "   line one   \n  line two  \n\tline three\t"
+    stripped_string = strip_lines(string3)
+    assert stripped_string == "line one\nline two\nline three"
+
 
 if __name__ == "__main__":
     main()
